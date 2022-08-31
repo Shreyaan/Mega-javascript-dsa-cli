@@ -1,6 +1,9 @@
 import inquirer from "inquirer";
 import array_easy_driver from "./driver_code/array_easy_driver.js";
 import array_medium_driver from "./driver_code/array_medium_driver.js";
+// import { second_largest_element_array } from "./problems/array_easy.js";
+
+
 
 inquirer
   .prompt([
@@ -8,7 +11,7 @@ inquirer
       type: "list",
       name: "choice",
       message: "which category of problem to solve?",
-      choices: ["array_easy", "array_meduim"],
+      choices: ["array_easy"],
     },
   ])
   .then((answers) => {
