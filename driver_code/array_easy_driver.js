@@ -2,6 +2,7 @@ import inquirer from "inquirer";
 import {
   largest_element_array,
   second_largest_element_array,
+  is_sorted
 } from "../problems/array_easy.js";
 
 export default () => {
@@ -11,7 +12,7 @@ export default () => {
         type: "list",
         name: "choice",
         message: "which problem to solve?",
-        choices: ["largest_element_array", "second_largest_element_array"],
+        choices: ["largest_element_array", "second_largest_element_array", "is_sorted"],
       },
     ])
     .then((answers) => {
@@ -28,6 +29,9 @@ export default () => {
         break;
       case "second_largest_element_array":
         second_largest_element_array();
+        break;
+      case "is_sorted":
+        is_sorted();
         break;
       default:
     }

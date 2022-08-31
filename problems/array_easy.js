@@ -79,6 +79,40 @@ Give an array like 2,5,1,3,0 or press enter to give default array`,
     return largest;
   }
 };
+export const is_sorted = () => {
+  let arr = [];
+  inquirer
+    .prompt([
+      {
+        name: "input",
+        message: `Given an array of size n, write a program to check if the given array is sorted in (ascending / Increasing / Non-decreasing) order or not. If the array is sorted then return True, Else return False. 
+
+Give an array like 2,5,1,3,0 or press enter to give default array`,
+        default: [3,4,5,1,2],
+      },
+    ])
+    .then((answers) => {
+      code(parseinput(answers));
+    });
+
+  function code(input) {
+   let nums = input;
+    let number=1, double=[...nums, ...nums];
+    
+    for(let i=0; i<double.length; i++){
+		if(double[i]<=double[i+1]){
+            if(++number>=nums.length){ console.log (true) 
+              return true};
+        }else{
+            number=1;
+        }
+    }
+    console.log(false)
+    return false;
+  }
+};
+
+
 function parseinput(answers) {
   let input;
   input = answers.input;
