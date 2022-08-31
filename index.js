@@ -1,36 +1,30 @@
 import inquirer from "inquirer";
-import {
-  largest_element_array,
-  second_largest_element_array,
-} from "./array_easy.js";
+import array_easy_driver from "./driver_code/array_easy_driver.js";
+import array_medium_driver from "./driver_code/array_medium_driver.js";
 
 inquirer
   .prompt([
     {
       type: "list",
       name: "choice",
-      message: "which code to run?",
-      choices: ["largest_element_array", "second_largest_element_array"],
+      message: "which category of problem to solve?",
+      choices: ["array_easy", "array_meduim"],
     },
   ])
   .then((answers) => {
     console.log("Answer:", answers.choice);
-
-    
     switchcase(answers);
-
     return;
   });
 
 function switchcase(answers) {
   switch (answers.choice) {
-    case "largest_element_array":
-
-      largest_element_array();
+    case "array_easy":
+      array_easy_driver();
 
       break;
-    case "second_largest_element_array":
-      second_largest_element_array();
+    case "array_meduim":
+      array_medium_driver();
       break;
     default:
   }
