@@ -5,13 +5,14 @@ export const largest_element_array = () => {
     .prompt([
       {
         name: "input",
-        message:
-          "give an array like 2,5,1,3,0 or press enter to give default array",
+        message: `Problem Statement: Given an array, we have to find the largest element in the array. 
+
+Give an array like 2,5,1,3,0 or press enter to give default array`,
         default: [2, 5, 1, 3, 0],
       },
     ])
     .then((answers) => {
-       parseinput(answers);
+      parseinput(answers);
       arr = parseinput(answers);
       let largest = arr[0];
 
@@ -22,7 +23,7 @@ export const largest_element_array = () => {
         }
       }
       console.log(`input : ${arr}`);
-      console.log(`output : ${largest}`);
+      console.log(`output : largest number of the array is ${largest}`);
       return largest;
     });
 };
@@ -33,8 +34,9 @@ export const second_largest_element_array = () => {
     .prompt([
       {
         name: "input",
-        message:
-          "give an array like 1,2,4,7,7,5 or press enter to give default array",
+        message: `Problem Statement: Given an array, find the second smallest and second largest element in the array. 
+
+Give an array like 2,5,1,3,0 or press enter to give default array`,
         default: [11, 23, 12, 323, 424, 43, 213, 1, 0, 31, 3, 4, 13, 5],
       },
     ])
@@ -85,4 +87,3 @@ function parseinput(answers) {
   input = input.map(Number);
   return input;
 }
-
